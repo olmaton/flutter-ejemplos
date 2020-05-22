@@ -1,3 +1,4 @@
+import 'package:examples/BottomOfNavigationInFlutter/BottomOfNavigationInFlutterPage.dart';
 import 'package:examples/HideBottomNavBar/HideBottomNavBar.dart';
 import 'package:examples/select-multiple/SelectMultiple.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  _btnBottomOfNavigationInFlutterPage(){
+    return RaisedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => BottomOfNavigationInFlutterPage(),
+                        ));
+                  },
+                  child: const Text(
+                      'BottomOfNavigationInFlutterPage',
+                      style: TextStyle(fontSize: 20)));
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: const Text('Listview con select multiple',
                       style: TextStyle(fontSize: 20))),
-                      RaisedButton(
+              RaisedButton(
                   onPressed: () {
                     Navigator.push(
                         context,
@@ -40,8 +55,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           builder: (context) => HideBottomNavBar(),
                         ));
                   },
-                  child: const Text('Ocultar BOTTOM NAVIGATION BAR on Scroll Down',
-                      style: TextStyle(fontSize: 20)))
+                  child: const Text(
+                      'Ocultar BOTTOM NAVIGATION BAR on Scroll Down',
+                      style: TextStyle(fontSize: 20))),_btnBottomOfNavigationInFlutterPage()
             ],
           ),
         ) // This trailing comma makes auto-formatting nicer for build methods.

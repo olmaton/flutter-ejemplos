@@ -1,3 +1,4 @@
+import 'package:examples/BottomNavigationBarWithTabBarView/BottomNavigationBarWithTabBarView.dart';
 import 'package:examples/BottomOfNavigationInFlutter/BottomOfNavigationInFlutterPage.dart';
 import 'package:examples/HideBottomNavBar/HideBottomNavBar.dart';
 import 'package:examples/select-multiple/SelectMultiple.dart';
@@ -26,6 +27,21 @@ class _MyHomePageState extends State<MyHomePage> {
                       'BottomOfNavigationInFlutterPage',
                       style: TextStyle(fontSize: 20)));
   }
+
+_btnBottomNavigationBarWithTabBarView(){
+    return RaisedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => BottomNavigationBarWithTabBarView(),
+                        ));
+                  },
+                  child: const Text(
+                      'BottomNavigationBarWithTabBarView',
+                      style: TextStyle(fontSize: 20)));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: const Text(
                       'Ocultar BOTTOM NAVIGATION BAR on Scroll Down',
-                      style: TextStyle(fontSize: 20))),_btnBottomOfNavigationInFlutterPage()
+                      style: TextStyle(fontSize: 20))),_btnBottomOfNavigationInFlutterPage(),_btnBottomNavigationBarWithTabBarView()
             ],
           ),
         ) // This trailing comma makes auto-formatting nicer for build methods.

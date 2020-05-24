@@ -1,6 +1,7 @@
 import 'package:examples/BottomNavigationBarWithTabBarView/BottomNavigationBarWithTabBarView.dart';
 import 'package:examples/BottomOfNavigationInFlutter/BottomOfNavigationInFlutterPage.dart';
 import 'package:examples/HideBottomNavBar/HideBottomNavBar.dart';
+import 'package:examples/PageViewWithBottomNavigationBar/PageViewWithBottomNavigationBar.dart';
 import 'package:examples/select-multiple/SelectMultiple.dart';
 import 'package:flutter/material.dart';
 
@@ -42,6 +43,20 @@ _btnBottomNavigationBarWithTabBarView(){
                       style: TextStyle(fontSize: 20)));
   }
 
+  _btnPageViewWithBottomNavigationBar(){
+    return RaisedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PageViewWithBottomNavigationBar(),
+                        ));
+                  },
+                  child: const Text(
+                      'Flutter — PageView with BottomNavigationBar',
+                      style: TextStyle(fontSize: 20)));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,7 +88,7 @@ _btnBottomNavigationBarWithTabBarView(){
                   },
                   child: const Text(
                       'Ocultar BOTTOM NAVIGATION BAR on Scroll Down',
-                      style: TextStyle(fontSize: 20))),_btnBottomOfNavigationInFlutterPage(),_btnBottomNavigationBarWithTabBarView()
+                      style: TextStyle(fontSize: 20))),_btnBottomOfNavigationInFlutterPage(),_btnBottomNavigationBarWithTabBarView(),_btnPageViewWithBottomNavigationBar()
             ],
           ),
         ) // This trailing comma makes auto-formatting nicer for build methods.

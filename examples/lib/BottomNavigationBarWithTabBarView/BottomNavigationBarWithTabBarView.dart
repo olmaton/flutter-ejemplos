@@ -22,8 +22,8 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMixin {
-
+class _MyHomePageState extends State<MyHomePage>
+    with SingleTickerProviderStateMixin {
   int _currentIndex = 0;
 
   List<Widget> _tabList = [
@@ -36,7 +36,6 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
     Container(
       color: Colors.purple,
     )
-
   ];
 
   TabController _tabController;
@@ -65,28 +64,19 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
-        onTap: (currentIndex){
-
+        onTap: (currentIndex) {
           setState(() {
             _currentIndex = currentIndex;
           });
 
-            _tabController.animateTo(_currentIndex);
-
+          _tabController.animateTo(_currentIndex);
         },
         items: [
+          BottomNavigationBarItem(title: Text("Home"), icon: Icon(Icons.home)),
           BottomNavigationBarItem(
-            title: Text("Home"),
-            icon: Icon(Icons.home)
-          ),
+              title: Text("Files"), icon: Icon(Icons.folder)),
           BottomNavigationBarItem(
-            title: Text("Files"),
-            icon: Icon(Icons.folder)
-          ),
-          BottomNavigationBarItem(
-            title: Text("Settings"),
-            icon: Icon(Icons.settings)
-          )
+              title: Text("Settings"), icon: Icon(Icons.settings))
         ],
       ),
     );
